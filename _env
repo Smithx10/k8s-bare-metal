@@ -7,3 +7,5 @@ export BASTION_HOST=
 export PUBLIC_NETWORK=
 # UUID of your private network
 export PRIVATE_NETWORK=
+# UUID or Name of your Packer Build Package
+export SOURCE_MACHINE_PACKAGE=
