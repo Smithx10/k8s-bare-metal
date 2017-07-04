@@ -6,7 +6,7 @@
     triton_url: "{{ env `SDC_URL` }}",
     triton_bastion_host: "{{ env `BASTION_HOST` }}",
     triton_public_network: "{{ env `PUBLIC_NETWORK` }}",
-    source_machine_package: "{{ env `SOURCE_MACHINE_NETWORK` }}",	
+    source_machine_package: "{{ env `SOURCE_MACHINE_PACKAGE` }}",	
     image_name: "k8s-worker-kvm-16.04",
     image_version: "1.0.0",
   },

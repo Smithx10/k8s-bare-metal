@@ -1,0 +1,15 @@
+export TF_VAR_k8s_bastion_image=f6f70dae-1e0a-481d-8f12-59204ecd8967
+export TF_VAR_k8s_bastion_public_key=4c:e6:33:6b:b3:c7:ef:c0:c2:0f:d9:f5:fc:ac:c3:a6
+export TF_VAR_k8s_controller_image=cfdb90c1-bb1d-40b1-9815-4348f674ffbd
+export TF_VAR_k8s_controller_package=51ccb3c2-2250-cb6e-b149-99c256c2ad6d
+export TF_VAR_k8s_worker_image=33c4778d-b72f-4d8d-b2b7-aef85541c0a1
+export TF_VAR_k8s_worker_package=9fbfef1f-226a-cd13-bd9d-ec42bfecc982
+export TF_VAR_k8s_etcd_image=d70bb901-00bd-4dea-966f-13bf7b4853d3
+export TF_VAR_k8s_etcd_package=57dfcf9b-a031-ec09-ce09-c863d9b10603
+export TF_VAR_k8s_etcd_cluster_name=k8s
+export TF_VAR_k8s_bastion_package=51ccb3c2-2250-cb6e-b149-99c256c2ad6d
+export TF_VAR_triton_public_network=05909d29-7c4f-4c04-9dab-dad2068de161
+export TF_VAR_triton_account=${SDC_ACCOUNT}
+export TF_VAR_triton_key_id=${SDC_KEY_ID}
+export TF_VAR_triton_url=${SDC_URL}
+export TF_VAR_triton_key_path=~/.ssh/id_rsa

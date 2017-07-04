@@ -1,4 +1,4 @@
-# Retrieve AWS credentials from env variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+# Retrieve Triton credentials from env variables
 provider "triton" {
   account = "${var.triton_account}"
   key_id  = "${var.triton_key_id}"

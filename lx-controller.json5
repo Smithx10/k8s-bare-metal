@@ -20,7 +20,7 @@
       triton_key_id: "{{ user `triton_key_id` }}",
       triton_key_material: "{{ user `triton_key_path` }}",
       source_machine_name: "k8s-controller-lx-builder",
-      source_machine_package: "{{ user `source_machine_package }}",
+      source_machine_package: "{{ user `source_machine_package` }}",
       source_machine_image: "7b5981c4-1889-11e7-b4c5-3f3bdfc9b88b",
 
       // Public Network for Building

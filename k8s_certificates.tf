@@ -1,14 +1,10 @@
 data "template_file" "certificates" {
   template = "${file("${path.module}/templates/kubernetes-csr.json")}"
-  depends_on = [
-    "triton_machine.controller",
-    "triton_machine.worker",
-  ]
 
   vars {
-    controller_ips = "${join(",", formatlist("\"%s\"", triton_machine.controller.*.primaryip))}"
-    worker_ips = "${join(",", formatlist("\"%s\"", triton_machine.worker.*.primaryip))}"
-    etcd_ips = "\"${var.etcd1_ip}\",\"${var.etcd2_ip}\",\"${var.etcd3_ip}\""
+    controller_ips = "${join(",", formatlist("\"%s\"", triton_machine.k8s_controller.*.primaryip))}"
+    worker_ips = "${join(",", formatlist("\"%s\"", triton_machine.k8s_worker.*.primaryip))}"
+    etcd_ips = "${join(",", formatlist("\"%s\"", triton_machine.k8s_etcd.*.primaryip))}"
   }
 }
 

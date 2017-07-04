@@ -1,8 +1,5 @@
 ---
 - hosts: workers
-  become_user: root
-  become: true
-  remote_user: root
   tasks:
 
   # - name: make directory for Kubernetes
@@ -13,13 +10,13 @@
   #     - /etc/kubernetes
 
   - name: upload certificates
+    become: true
     copy:
       src: ../output/{{ item }}
       dest: /var/lib/kubernetes
       owner: root
       group: root
       mode: 0600
-    become: true
     with_items:
       - ca.pem
       - kubernetes.pem

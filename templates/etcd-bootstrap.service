@@ -1,0 +1,22 @@
+[Unit]
+Description=etcd
+Documentation=https://github.com/coreos/etcd
+
+[Service]
+Type=notify
+Restart=always
+RestartSec=5s
+LimitNOFILE=40000
+TimeoutStartSec=0
+ExecStartPre=/bin/bash -c "/bin/systemctl set-environment ETCD_IP=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)"
+ExecStart=/usr/local/bin/etcd --name bootstrap \
+    --listen-client-urls http://0.0.0.0:4001 \
+    --advertise-client-urls http://${ETCD_IP}:2379 \
+    --listen-peer-urls http://0.0.0.0:2380 \
+    --initial-advertise-peer-urls http://${ETCD_IP}:2380 \
+    --initial-cluster-token etcd-cluster-1 \
+    --initial-cluster bootstrap=http://${ETCD_IP}:2380 \
+    --initial-cluster-state new
+
+[Install]
+WantedBy=multi-user.target
